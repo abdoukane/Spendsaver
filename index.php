@@ -19,7 +19,13 @@
        
             <div class="container"> 
                 <div class = 'div1'>
-                     <h2> Welcome</h2>
+                     <h2> Experience</h2>
+                    <p>     </p>
+                </div>
+
+                 <div class = 'div2'>
+                   
+                    <h2> Welcome</h2>
                       <p> Thanks for coming to my site. I'll explain a bit about myself, and then you can read some blog posts ive written.</p>
                     
 
@@ -31,15 +37,10 @@
                         <li> <a href = "blog2.html">My thoughts on the weather</a></li>
                     </ul>
                 </div>
-
-                 <div class = 'div2'>
-                    <h2> Experience</h2>
-                    <p>     </p>
-                   
-                </div>
                 <div class="div3">
-                    <h2> box 3</h2>
+                    <h2> Who Am I?</h2>
                  
+
                 </div>
              </div>
         
