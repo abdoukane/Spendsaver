@@ -33,12 +33,12 @@
                    
                     <p class = 'emphasis'> here are some blog posts I've written</p>
                     <ul>
-                        <li><a href="blog1.html">More info about me</a>  </li>
-                        <li> <a href = "blog2.html">My thoughts on the weather</a></li>
+                      <a href = "blog2.html">My thoughts on the weather</a>
                     </ul>
                 </div>
                 <div class="div3">
-                    <h2> Who Am I?</h2>
+                    
+                    <h1 class = "who"><a href="blog1.html">Who am I?</a> </h1>
                  
 
                 </div>
