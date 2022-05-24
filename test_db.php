@@ -2,7 +2,7 @@
 
 
 
-include("include/connect.php");
+include("include/initialize.php");
 
 $result = dbQuery("SHOW TABLES")->fetchAll();
 
