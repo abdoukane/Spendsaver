@@ -1,9 +1,10 @@
 <?php
 
 function getHeader(){
-
 echo "  
-    <title> Doobie's site</title>
+<html>
+    <head>
+    <title> Doobie's site </title>
     <link rel='stylesheet' href='index.css'>
 
 
