@@ -1,6 +1,6 @@
 <html>
     <head>
-        <title> Doobies site</title>
+        <title> Doobie's site</title>
         <link rel="stylesheet" href="index.css">
  
 
@@ -19,7 +19,7 @@
        
             <div class="container"> 
                 <div class = 'div1'>
-                     <h2> Experience</h2>
+                     <h2>  <a href = "blog2.html">Experience</a></h2>
                     <p>     </p>
                 </div>
 
@@ -31,14 +31,13 @@
 
                     <p> I'm a student at WashU in St. Louis. I'm currently a computer science and economics joint major, with a minor in psychology. I enjoy boxing, playing pickup and watching basketball. I love mwatching movies and TV shows, a show I recently just finished is Top Boy. I would like to work in the Tech industry after college and someday hope to start my own business, although I'm not sure what for yet.  </p>
                    
-                    <p class = 'emphasis'> here are some blog posts I've written</p>
-                    <ul>
-                      <a href = "blog2.html">My thoughts on the weather</a>
-                    </ul>
+                   <h3> <p class = 'emphasis'> <--here's some more information about--> me!</p></h3>
+                   
+                    
                 </div>
                 <div class="div3">
                     
-                    <h1 class = "who"><a href="blog1.html">Who am I?</a> </h1>
+                    <h2><a href="blog1.html">Who am I?</a> </h2>
                  
 
                 </div>
