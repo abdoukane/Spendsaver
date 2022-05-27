@@ -19,15 +19,6 @@ echo "
                 <img class='desert' src='desert.jpg' alt='desert photo'> 
             </div>
         
-        </div>
-
-        <div class='container'> 
-            <div class = 'div1'>
-                <h2>  <a href = 'blog2.html'>Experience</a></h2>
-                <p>     </p>
-            </div>"
-
-
-
-
+        </div>";
 };
+
