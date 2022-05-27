@@ -5,7 +5,7 @@
 
         getHeader();
 
-       
+   
 
        $getContent = getAllPosts();
        //var_dump($getContent);

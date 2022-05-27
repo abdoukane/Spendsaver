@@ -17,11 +17,8 @@
 return $postArray;
 }
 
-
-// function echoPosts($postArray){
-
-//     foreach($postArray as $index => $post){
-//         echo 
-//     }
-
-// }
+function getPost(){
+    $posts = getAllPosts();
+    $post = $posts[$index];
+    return $post;
+}
