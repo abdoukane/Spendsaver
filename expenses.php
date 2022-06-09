@@ -2,4 +2,4 @@
 
 function getExpenses();
 
-$expenses = dbQuery
+$expenses =
