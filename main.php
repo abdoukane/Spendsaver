@@ -9,8 +9,18 @@
             <h1 class = 'title'>Spendsaver </h1>
         </div>
 
-        <div class= 'flex'>
-            
+        <div class= 'container'>
+            <div class = 'form'>
+                <h1 class = 'formtext'> FORM GOES HERE </h1>
+            </div>  
+
+            <div class = 'expenselist'>
+            <h1 class = 'expenses'> EXPENSES </h1>
+            </div>
+
+            <div class = 'possiblemeters'>
+            <h1 class = 'meters'> METERS </h1>
+            </div>
 
         </div>  
 

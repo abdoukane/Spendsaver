@@ -33,3 +33,44 @@ body{
     
 
 }
+
+.container{
+    display: flex;
+width: 100%;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+ 
+  position: absolute;
+  flex-direction: row; 
+  justify-content: center;
+  align-items: center;
+    flex-direction: row;
+   flex-wrap:wrap;
+   
+   gap: 100px;
+   
+  
+   
+}
+.expenselist{
+
+    order:1;
+    background-color: #fb8500; 
+    border-radius: 25px;
+  
+}
+.form{
+    order: 2;
+
+   background-color: #fb8500; 
+   border-radius: 25px;
+   
+}
+.possiblemeters{
+    order: 3;
+    background-color: #fb8500; 
+    border-radius: 25px;
+ 
+}
+
