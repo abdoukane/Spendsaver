@@ -16,3 +16,23 @@ $expenses = dbQuery(
 return $expenses;
 
 }
+
+
+
+
+
+function getExpense(){
+
+    $expenses = dbQuery(
+        " 
+        SELECT *
+    
+        FROM Expenses
+    
+    
+        "
+    )->fetch();
+    
+    return $expense;
+    
+    }
