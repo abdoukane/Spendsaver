@@ -3,8 +3,11 @@
         <title> Spendsaver </title> 
          <link rel='stylesheet' href='main.css'>
         <body>
-      
-
+            <?php
+        include_once('include/initialize.php'); 
+      $getExpenses= getExpenses();
+      var_dump($getExpenses);
+?>
         <div class = 'header' > 
             <h1 class = 'title'>Spendsaver </h1>
         </div>
@@ -15,7 +18,11 @@
             </div>  
 
             <div class = 'expenselist'>
-            <h1 class = 'expenses'> EXPENSES </h1>
+                <?php
+                echo"
+            <h1 class = 'expenses'> $getExpenses[Amount]</h1>
+            ";
+            ?>
             </div>
 
             <div class = 'possiblemeters'>
