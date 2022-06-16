@@ -19,13 +19,14 @@ function getHeader(){
 
 function getFooter(){
     echo"
+    
     <div class = 'footer'>
     <h1 class= 'end'> Icons for different pages should be here!</h1>
 
 
 
-</body>
 
+</body>
 </head>
 </html> ";
 }

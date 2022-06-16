@@ -3,7 +3,7 @@
 
 include_once('include/initialize.php'); 
 $getExpenses= getExpenses();
-var_dump($getExpenses);
+//var_dump($getExpenses);
 getHeader();
 
 echo"
@@ -16,23 +16,24 @@ echo"
   "; 
   ?>
   <?php
-   foreach($getExpenses as $index){
-       echo" 
+//    foreach($getExpenses as $index){
+//        echo" 
        
-    <h1 class = 'expenses'> $index[Amount]</h1>
+//     <h1 class = 'expenses'> $index[Amount]</h1>
     
    
-    </div>
-    ";}
+//     </div>
+//     ";}
     ?>
     <?php
-    echo"
+    //  <div class = 'possiblemeters'>
+    //  <h1 class = 'meters'> METERS </h1>
+   echo"
 
-    <div class = 'possiblemeters'>
-    <h1 class = 'meters'> METERS </h1>
-    </div>
+  
+     </div>
 
-</div>  ";
+ </div>  ";
 
 getFooter();
 
