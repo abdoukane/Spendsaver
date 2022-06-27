@@ -6,15 +6,17 @@ getHeader();
 
 $meterData = [
 	123 => [
+        'category' => 'Food',
 		'monthlyBudget' => 400,
 		'currentSpend' => 250
 	],
 	567 => [
-		'monthlyBudget' => 750,
+        'category' => 'necessities',
+		'monthlyBudget' => 500,
 		'currentSpend' => 100
 	]
 ];
-$getExpenses= getExpenses();
+
 echo"
 
 
@@ -52,7 +54,7 @@ echo"
     padding:10px;
     text-align:right;
     border-radius: 20px;
-    width:70%;
+    width:80%;  
 }
     </style>
 
