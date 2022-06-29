@@ -2,50 +2,63 @@
 include_once('include/initialize.php'); 
 getHeader();
 
-
-
 $meterData = [
 	123 => [
         'category' => 'Food',
 		'monthlyBudget' => 400,
-		'currentSpend' => 250
+		'currentSpend' => 390
 	],
 	567 => [
-        'category' => 'necessities',
+        'category' => 'Necessities',
 		'monthlyBudget' => 500,
 		'currentSpend' => 100
 	]
 ];
 
 echo"
-
-
+<div class = 'container'>
 <div class='shell'>
-<h1>CATEGORY</h1>
+
+";
+foreach($meterData as $category){
+   $name = $category['category'];
+$percentfilled = ($category['currentSpend']/$category['monthlyBudget'])*100;
+echo"
+    <h1 style= 'color: #FF652F;'>$name</h1>
     <div class='meteroutline'>
-    <div class='percentfilled'>80%</div>
+    <div class='percentfilled' style= 'width: $percentfilled%;'>$percentfilled%</div>
     </div>
-   </div>
-
-
+ 
+   ";
+}
+echo" 
+ </div>
+ </div>
     <style>
+
+    .container{
+      display: flex;
+    }
 
     .meteroutline{  
         background-color: #505050;
-        position: absolute;
+        
         width: 100%;
         border-radius: 20px;
        
+     
     }
 .shell{  
-    background-color: #272727;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    position: absolute;
+    display: flex;
+    background-color: #272727; 
+    
+    flex-direction: column;
+    
+  
     width: 25%;
     border-radius: 20px;
-   
+   justify-content: space-evenly;
+
 }
 
 .percentfilled{
@@ -54,7 +67,7 @@ echo"
     padding:10px;
     text-align:right;
     border-radius: 20px;
-    width:80%;  
+
 }
     </style>
 
