@@ -1,9 +1,9 @@
 <?php
 include_once('include/initialize.php'); 
-
+getHeader();
 $errors=[];
 
-if(isset($_REQUEST['UserId'])){
+if(isset($_REQUEST['Category'])){
     if(!isset($_REQUEST['Name']) || $_REQUEST['Name'] ==''){
         $errors['Name']='Required';
     } 
@@ -21,7 +21,7 @@ header("location:?");
 die("the form was submitted");
     }
 }
-getHeader();
+
 
 
 echo"
