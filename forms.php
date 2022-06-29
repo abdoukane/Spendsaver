@@ -1,6 +1,6 @@
 <?php
 include_once('include/initialize.php'); 
-getHeader();
+
 $errors=[];
 
 if(isset($_REQUEST['Category'])){
@@ -22,7 +22,7 @@ die("the form was submitted");
     }
 }
 
-
+debugOutput($errors);
 
 echo"
 <form method = 'post' action=''>
