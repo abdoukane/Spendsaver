@@ -13,8 +13,8 @@ if(isset($_REQUEST['Category'])){
 
     if(sizeof($errors)==0){
 dbQuery("
-        INSERT INTO Category(Name, Budget)
-        VALUES('$_REQUEST[Name]', '$_REQUEST[Budget]')
+        INSERT INTO Category(Name, Budget, UserId, SortOrder)
+        VALUES('$_REQUEST[Name]', '$_REQUEST[Budget]','$_SESSION[UserId]', '1')
 ");
 
 header("location:?");
@@ -22,7 +22,6 @@ die("the form was submitted");
     }
 }
 
-debugOutput($errors);
 
 echo"
 <form method = 'post' action=''>
