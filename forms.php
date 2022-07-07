@@ -36,14 +36,19 @@ Budget:<input type = 'text' name='Budget' />
 ";
 
 
+
 $errors=[];
 
 if(isset($_REQUEST['Expenses'])){
-    if(!isset($_REQUEST['CategoryId']) || $_REQUEST['CategoryId'] ==''){
+    if(!isset($_REQUEST['CategoryId']) || $_REQUEST['CategoryId'] == ''){
         $errors['CategoryId']='Required';
+        var_dump($errors);
+        die("the form was not submitted");
+        
     } 
     if(!isset($_REQUEST['Amount']) || $_REQUEST['Amount'] ==''){
         $errors['Amount']='Required';
+        die("the form wasnt submitted");
     }
 
     if(sizeof($errors)==0){
@@ -56,11 +61,25 @@ header("location:?");
 die("the form was submitted");
     }
 }
-
+ $getCategories= getCategories();
+           
 echo"
 <form method = 'post' action=''>
 
-Category: <input type = 'text' name='CategoryId' />
+Category: <select name= 'Categories' id= 'categories'>
+            <optgroup label = 'Categories'>
+            ";   
+           
+            foreach($getCategories as $index){
+         
+echo"
+           
+            <option value = $index[CategoryId]>$index[Name]</option>
+            ";
+ }
+ echo"
+            </optgroup>
+            </select>
 <br />
 
 Amount:<input type = 'text' name='Amount' />

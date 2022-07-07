@@ -24,6 +24,8 @@ function getCategories(){
         FROM Category
         "
     )->fetchAll();
+
+    return $categories;
 }
 
 function getExpense(){
