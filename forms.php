@@ -60,7 +60,7 @@ die("the form was submitted");
 echo"
 <form method = 'post' action=''>
 
-Category(change to dropdown): <input type = 'text' name='CategoryId' />
+Category: <input type = 'text' name='CategoryId' />
 <br />
 
 Amount:<input type = 'text' name='Amount' />

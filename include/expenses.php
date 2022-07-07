@@ -17,6 +17,15 @@ return $expenses;
 
 }
 
+function getCategories(){
+    $categories = dbQuery(
+        "
+        SELECT *
+        FROM Category
+        "
+    )->fetchAll();
+}
+
 function getExpense(){
 
     $expenses = dbQuery(
