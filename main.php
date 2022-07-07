@@ -16,19 +16,19 @@ echo"
   "; 
   ?>
   <?php
-//    foreach($getExpenses as $index){
-//        echo" 
+    foreach($getExpenses as $index){
+        echo" 
        
-//     <h1 class = 'expenses'> $index[Amount]</h1>
+     <h1 class = 'expenses'> $index[Amount]</h1>
     
    
-//     </div>
-//     ";}
-    ?>
-    <?php
-    //  <div class = 'possiblemeters'>
-    //  <h1 class = 'meters'> METERS </h1>
-   echo"
+     </div>
+     ";}
+ 
+    echo"
+      <div class = 'possiblemeters'>
+     <h1 class = 'meters'> METERS </h1>
+
 
   
      </div>

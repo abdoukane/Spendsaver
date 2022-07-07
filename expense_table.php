@@ -6,4 +6,3 @@ $expenses = dbQuery(
     " SELECT Amount FROM Expenses "
 );
 
-echo $expenses;

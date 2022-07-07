@@ -17,10 +17,6 @@ return $expenses;
 
 }
 
-
-
-
-
 function getExpense(){
 
     $expenses = dbQuery(
@@ -35,4 +31,20 @@ function getExpense(){
     
     return $expense;
     
+    }
+
+    function deleteExpense($ExpenseId){
+     
+    
+        $deleteExpense = dbQuery(
+            " 
+            DELETE 
+        
+            FROM Expenses
+
+            WHERE ExpenseId = $ExpenseId
+        
+            "
+        )->fetch();
+        return $deleteExpense;
     }
