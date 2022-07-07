@@ -66,7 +66,7 @@ die("the form was submitted");
 echo"
 <form method = 'post' action=''>
 
-Category: <select name= 'Categories' id= 'categories'>
+Category: <select name= 'CategoryId' id= 'categories'>
             <optgroup label = 'Categories'>
             ";   
            

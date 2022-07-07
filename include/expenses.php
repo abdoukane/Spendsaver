@@ -17,7 +17,7 @@ return $expenses;
 
 }
 
-function getCategories(){
+function getCategories($CategoryId){
     $categories = dbQuery(
         "
         SELECT *
