@@ -21,7 +21,8 @@ echo"
 
 ";
 foreach($meterData as $category){
-   $name = $category['category'];
+    //$cat = getCategories($CategoryId);
+   $name = $category['CategoryId'];
 $percentfilled = ($category['currentSpend']/$category['monthlyBudget'])*100;
 echo"
     <h1 style= 'color: #FF652F;'>$name</h1>

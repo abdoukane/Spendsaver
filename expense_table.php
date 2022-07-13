@@ -2,16 +2,54 @@
 
 include_once('include/initialize.php'); 
 
-$getExpenses= getExpenses();
+$getExpenses= tableQuery();
 //$deleteExpense = deleteExpense();
 
 
-if(isset($_REQUEST['ExpenseId'])) {
-    $ExpenseId = $_REQUEST['ExpenseId'];
-   $deleteExpense = deleteExpense($ExpenseId);
-   return $deleteExpense;
+// if(isset($_REQUEST['ExpenseId'])) {
+//     $ExpenseId = $_REQUEST['ExpenseId'];
+//    $deleteExpense = deleteExpense($ExpenseId);
+//    return $deleteExpense;
 
-    location.reload();
+//     location.reload();
+// }
+
+if(isset($_REQUEST['ExpenseId'])) {
+    $getCategories= getCategories();
+    $ExpenseId = $_REQUEST['ExpenseId'];
+    $new = 1;
+    echo"
+    <form method = 'post' action=''>
+    
+    Category: <select name= 'CategoryId' id= 'categories'>
+                <optgroup label = 'Categories'>
+                ";   
+               
+                foreach($getCategories as $index){
+             
+    echo"
+               
+                <option value = $index[CategoryId]>$index[Name]</option>
+                ";
+     }
+     echo"
+                </optgroup>
+                </select>
+    <br />
+    
+    Amount:<input type = 'text' name='Amount' />
+    <input type = 'submit' name='$new'/>
+    </form>
+    ";
+     $update = dbQuery(
+        "
+        Update Expenses
+        SET Amount=$newAmount, Category=
+        WHERE ExpenseId = $ExpenseId
+        "
+    )->fetchAll();
+  
+   
 }
 
 echo"
@@ -28,12 +66,12 @@ foreach($getExpenses as $index){
   
      echo" 
 <tr>
-    <td>Cat name</td>
+    <td>$index[Name]</td>
     <td>$index[Amount]</td>
     <td>$index[DateCreated] </td>
     <td> 
         <a href='?ExpenseId=$index[ExpenseId]'>delete</a>
-        <a href='#'>edit</a>
+        <a href='?ExpenseId=$index[ExpenseId]'>edit</a>
     </td>
 </tr>
    

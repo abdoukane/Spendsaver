@@ -2,6 +2,7 @@
 
 include_once('include/initialize.php'); 
 
+function edit
 $category = getCategories($_REQUEST['categoryId']);
 
 echo"
