@@ -22,15 +22,14 @@ echo"
 ";
 foreach($meterData as $category){
    $name = $category['category'];
-$percentfilled = ($category['currentSpend']/$category['monthlyBudget'])*100;
-echo"
-    <h1 style= 'color: #FF652F;'>$name</h1>
-    <div class='meteroutline'>
-    <div class='percentfilled' style= 'width: $percentfilled%;'>$percentfilled%</div>
-    </div>
- 
-   ";
-}
+    $percentfilled = ($category['currentSpend']/$category['monthlyBudget'])*100;
+    echo"
+        <h2 style= 'color: #FF652F;'>$name</h2>
+        <div class='meteroutline'>
+        <div class='percentfilled' style= 'width: $percentfilled%;'>$percentfilled%</div>
+        </div>
+    ";
+    }
 echo" 
  </div>
  </div>
