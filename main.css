@@ -1,0 +1,75 @@
+body{
+    background-color: #272727;
+}
+.header{
+    background-color: #FF652F; 
+  
+    background-size: contain;
+    float: left;
+    display: block;
+    color: rgb(0, 0, 0); 
+    border-radius: 15px;   
+} 
+
+.title{
+    color: #272727;
+}
+.footer{
+    background-color:#FF652F; 
+    position: fixed;
+    bottom: 0;
+  width: 99%;
+    color: rgb(0, 0, 0); 
+    border-radius: 15px;
+  
+    
+}
+.end{
+    color: #272727; 
+    text-align: center
+;
+    
+
+}
+
+.container{
+    display: flex;
+width: 100%;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+ 
+  position: absolute;
+  flex-direction: row; 
+  justify-content: center;
+ 
+ 
+ 
+   
+   gap: 100px;
+   
+  
+   
+}
+.expenselist{
+
+    background-color: #FF652F; 
+    border-radius: 25px;
+  
+}
+.form{
+    order: 1;
+
+   background-color: #FF652F; 
+   border-radius: 25px;
+   
+}
+.possiblemeters{
+    order: 3;
+    background-color: #FF652F; 
+    border-radius: 25px;
+ 
+}
+
+
+
