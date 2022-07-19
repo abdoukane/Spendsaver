@@ -28,7 +28,7 @@ echo"
 Category Name: <input type = 'text' name='Name' />
 <br />
 
-Budget:<input type = 'text' name='Budget' />
+Budget:<input type = 'int' name='Budget' />
 
 <br/><br />
 <input type = 'submit' name='Category'/>
