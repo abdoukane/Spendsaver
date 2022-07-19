@@ -1,7 +1,9 @@
 <?php
 include_once('include/initialize.php'); 
 getHeader();
-
+echo"
+<link rel='stylesheet' href='meters.css'>
+";
 $meterData = [
 	123 => [
         'category' => 'Food',
@@ -14,7 +16,9 @@ $meterData = [
 		'currentSpend' => 100
 	]
 ];
-
+echo" 
+<link rel='stylesheet' href='main.css'>
+";
 echo"
 <div class = 'container'>
 <div class='shell'>
@@ -30,49 +34,54 @@ foreach($meterData as $category){
         </div>
     ";
     }
-echo" 
+    
+    echo"
+    </div>
  </div>
- </div>
-    <style>
+ ";
+// echo" 
+// <link rel='stylesheet' href='main.css'>
+ 
+//     <style>
 
-    .container{
-      display: flex;
-    }
+//     .container{
+//       display: flex;
+//     }
 
-    .meteroutline{  
-        background-color: #505050;
+//     .meteroutline{  
+//         background-color: #505050;
         
-        width: 100%;
-        border-radius: 20px;
+//         width: 100%;
+//         border-radius: 20px;
        
      
-    }
-.shell{  
-    display: flex;
-    background-color: #272727; 
+//     }
+// .shell{  
+//     display: flex;
+//     background-color: #272727; 
     
-    flex-direction: column;
+//     flex-direction: column;
     
   
-    width: 25%;
-    border-radius: 20px;
-   justify-content: space-evenly;
+//     width: 25%;
+//     border-radius: 20px;
+//    justify-content: space-evenly;
 
-}
+// }
 
-.percentfilled{
-    background-color: #FF652F;
-    color: white;
-    padding:10px;
-    text-align:right;
-    border-radius: 20px;
+// .percentfilled{
+//     background-color: #FF652F;
+//     color: white;
+//     padding:10px;
+//     text-align:right;
+//     border-radius: 20px;
 
-}
-    </style>
-
-
+// }
+//     </style>
 
 
-";
+
+
+// ";
 
 getFooter();
