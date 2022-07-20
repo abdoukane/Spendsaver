@@ -16,21 +16,10 @@ echo"
   "; 
   ?>
   <?php
-    foreach($getExpenses as $index){
-        echo" 
-       
-     <h1 class = 'expenses'> $index[Amount]</h1>
-    
-   
-     </div>
-     ";}
- 
-    echo"
-      <div class = 'possiblemeters'>
-     <h1 class = 'meters'> METERS </h1>
-
-
   
+        echo" 
+     </div>
+      <div class = 'possiblemeters'>
      </div>
 
  </div>  ";
