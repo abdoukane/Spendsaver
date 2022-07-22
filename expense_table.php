@@ -6,51 +6,52 @@ $getExpenses= tableQuery();
 //$deleteExpense = deleteExpense();
 
 
-// if(isset($_REQUEST['ExpenseId'])) {
-//     $ExpenseId = $_REQUEST['ExpenseId'];
-//    $deleteExpense = deleteExpense($ExpenseId);
-//    return $deleteExpense;
-
-//     location.reload();
-// }
-
 if(isset($_REQUEST['ExpenseId'])) {
-    $getCategories= getCategories();
     $ExpenseId = $_REQUEST['ExpenseId'];
-    $new = 1;
-    echo"
-    <form method = 'post' action=''>
+   $deleteExpense = deleteExpense($ExpenseId);
+   return $deleteExpense;
+
+   header("Refresh:0");
+
+}
+
+// if(isset($_REQUEST['ExpenseId'])) {
+//     $getCategories= getCategories();
+//     $ExpenseId = $_REQUEST['ExpenseId'];
+//     $new = 1;
+//     echo"
+//     <form method = 'post' action=''>
     
-    Category: <select name= 'CategoryId' id= 'categories'>
-                <optgroup label = 'Categories'>
-                ";   
+//     Category: <select name= 'CategoryId' id= 'categories'>
+//                 <optgroup label = 'Categories'>
+//                 ";   
                
-                foreach($getCategories as $index){
+//                 foreach($getCategories as $index){
              
-    echo"
+//     echo"
                
-                <option value = $index[CategoryId]>$index[Name]</option>
-                ";
-     }
-     echo"
-                </optgroup>
-                </select>
-    <br />
+//                 <option value = $index[CategoryId]>$index[Name]</option>
+//                 ";
+//      }
+//      echo"
+//                 </optgroup>
+//                 </select>
+//     <br />
     
-    Amount:<input type = 'text' name='Amount' />
-    <input type = 'submit' name='$new'/>
-    </form>
-    ";
-     $update = dbQuery(
-        "
-        Update Expenses
-        SET Amount=$newAmount, Category=
-        WHERE ExpenseId = $ExpenseId
-        "
-    )->fetchAll();
+//     Amount:<input type = 'text' name='Amount' />
+//     <input type = 'submit' name='$new'/>
+//     </form>
+//     ";
+//      $update = dbQuery(
+//         "
+//         Update Expenses
+//         SET Amount= $newAmount, Category=
+//         WHERE ExpenseId = $ExpenseId
+//         "
+//     )->fetchAll();
   
    
-}
+// }
 
 echo"
 <table>
