@@ -6,11 +6,8 @@ function getExpenses(){
 $expenses = dbQuery(
     " 
     SELECT *
-
     FROM Expenses
-
     ORDER BY DateCreated DESC
-
     "
 )->fetchAll();
 
@@ -34,10 +31,7 @@ function getExpense(){
     $expenses = dbQuery(
         " 
         SELECT *
-    
         FROM Expenses
-    
-    
         "
     )->fetch();
     
@@ -51,15 +45,24 @@ function getExpense(){
         $deleteExpense = dbQuery(
             " 
             DELETE 
-        
             FROM Expenses
-
             WHERE ExpenseId = $ExpenseId
-        
             "
         )->fetch();
         return $deleteExpense;
     }
+
+    function EditExpense($ExpenseId, $newAmount, $newCategory){ 
+
+    $update = dbQuery(
+        "
+        Update Expenses
+        SET Amount=$newAmount, Category=$newCategory
+        WHERE ExpenseId= $ExpenseId
+        "
+    )->fetch();
+}
+
 
     Function expenseTotal(){
 
@@ -90,15 +93,4 @@ function getExpense(){
         return $total;
     }
 
-    // EditExpense($ExpenseId){
-    //      $newCategory =  
-       
-    //    $newAmount = 
-    //     $update = dbQuery(
-    //         "
-    //         Update Expenses
-    //         SET Amount=$newAmount, Category=$newCategory
-    //         "
-    //     )->fetchAll();
-    // }
 

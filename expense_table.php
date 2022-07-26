@@ -1,10 +1,13 @@
 <?php
 
 include_once('include/initialize.php'); 
-
+getHeader();
+getFooter();
 $getExpenses= tableQuery();
-//$deleteExpense = deleteExpense();
 
+echo"
+<link rel='stylesheet' href='expense_table.css'>
+";
 
 if(isset($_REQUEST['ExpenseId'])) {
     $ExpenseId = $_REQUEST['ExpenseId'];
@@ -15,45 +18,52 @@ if(isset($_REQUEST['ExpenseId'])) {
 
 }
 
-// if(isset($_REQUEST['ExpenseId'])) {
-//     $getCategories= getCategories();
-//     $ExpenseId = $_REQUEST['ExpenseId'];
-//     $new = 1;
-//     echo"
-//     <form method = 'post' action=''>
+if(isset($_REQUEST['ExpenseId'])) {
+    $ExpenseId = $_REQUEST['ExpenseId'];
+
+
+
+    $getCategories= getCategories($ExpenseId, $newAmount, $newCategory);
+    $ExpenseId = $_REQUEST['ExpenseId'];
+    $new = 1;
+
+    echo"
+    <form method = 'post' action=''>
     
-//     Category: <select name= 'CategoryId' id= 'categories'>
-//                 <optgroup label = 'Categories'>
-//                 ";   
+    Category: <select name= 'CategoryId' id= 'categories'>
+                <optgroup label = 'Categories'>
+                ";   
                
-//                 foreach($getCategories as $index){
+                foreach($getCategories as $index){
              
-//     echo"
+    echo"
                
-//                 <option value = $index[CategoryId]>$index[Name]</option>
-//                 ";
-//      }
-//      echo"
-//                 </optgroup>
-//                 </select>
-//     <br />
+                <option value = $index[CategoryId]>$index[Name]</option>
+                ";
+     }
+     echo"
+                </optgroup>
+                </select>
+    <br />
     
-//     Amount:<input type = 'text' name='Amount' />
-//     <input type = 'submit' name='$new'/>
-//     </form>
-//     ";
-//      $update = dbQuery(
-//         "
-//         Update Expenses
-//         SET Amount= $newAmount, Category=
-//         WHERE ExpenseId = $ExpenseId
-//         "
-//     )->fetchAll();
+    Amount:<input type = 'text' name='Amount' />
+    <input type = 'submit' name='$new'/>
+    </form>
+    ";
+     $update = dbQuery(
+        "
+        Update Expenses
+        SET Amount= $newAmount, Category=
+        WHERE ExpenseId = $ExpenseId
+        "
+    )->fetchAll();
   
    
-// }
+}
 
 echo"
+<div class = 'container'>
+<div class = 'table'>
 <table>
 <tr>
     <td>Category</td>
@@ -78,9 +88,10 @@ foreach($getExpenses as $index){
    
 
 ";
-    
+
 }
-
-
-
+echo"
+</div>
+</div>
+";
 

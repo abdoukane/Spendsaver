@@ -31,7 +31,8 @@ body{
 svg{
      width:6%;
      background-color: #272727;
-     fill : #FF652F;
+     stroke : #FF652F;
+     fill: #FF652F;
  }
 .end{
     color: #272727; 
@@ -119,3 +120,7 @@ select{
     text-align: center;
 }
 
+
+a{
+    color: #FF652F;
+}

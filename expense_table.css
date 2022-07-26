@@ -1,0 +1,38 @@
+
+.container{
+    display: flex;
+    width: 100%;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+     
+      position: absolute;
+      flex-direction: row; 
+      justify-content: center;
+
+}
+
+tr:nth-child(even)
+ {
+     background-color: #505050;
+
+}
+th, td, tr{
+   
+    text-align: center;
+    padding: 15px;
+
+color: #FF652F ;
+font-weight: bold;
+border-radius: 20px;
+
+  }
+.table{
+
+background-color: #333333;
+
+border-radius: 20px;
+
+
+
+}
