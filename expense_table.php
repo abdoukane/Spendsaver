@@ -46,7 +46,7 @@ if(isset($_REQUEST['ExpenseId'])) {
                 </select>
     <br />
     
-    Amount:<input type = 'text' name='Amount' />
+    Amount:<input type = 'text' placeholder=  name='Amount' />
     <input type = 'submit' name='$new'/>
     </form>
     ";
@@ -81,8 +81,9 @@ foreach($getExpenses as $index){
     <td>$index[Amount]</td>
     <td>$index[DateCreated] </td>
     <td> 
+        <a href='edit.php?ExpenseId=$index[ExpenseId]'>edit</a>
+        /
         <a href='?ExpenseId=$index[ExpenseId]'>delete</a>
-        <a href='?ExpenseId=$index[ExpenseId]'>edit</a>
     </td>
 </tr>
    
