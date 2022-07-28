@@ -1,6 +1,7 @@
  <?php
 
 include_once('include/initialize.php'); 
+checkUser();
 $getExpenses= getExpenses();
 //var_dump($getExpenses);
 getHeader();
@@ -43,6 +44,7 @@ echo"
     </form>
     ";
     
+
     
     
     $errors=[];

@@ -1,6 +1,8 @@
 <?php
 
 include_once('include/initialize.php'); 
+checkUser();
+var_dump($_SESSION['UserId']);
 getHeader();
 getFooter();
 $getExpenses= tableQuery();
@@ -10,56 +12,14 @@ echo"
 ";
 
 if(isset($_REQUEST['ExpenseId'])) {
+    header("Location:expense_table.php ");
     $ExpenseId = $_REQUEST['ExpenseId'];
    $deleteExpense = deleteExpense($ExpenseId);
    return $deleteExpense;
 
-   header("Refresh:0");
-
 }
 
-if(isset($_REQUEST['ExpenseId'])) {
-    $ExpenseId = $_REQUEST['ExpenseId'];
 
-
-
-    $getCategories= getCategories($ExpenseId, $newAmount, $newCategory);
-    $ExpenseId = $_REQUEST['ExpenseId'];
-    $new = 1;
-
-    echo"
-    <form method = 'post' action=''>
-    
-    Category: <select name= 'CategoryId' id= 'categories'>
-                <optgroup label = 'Categories'>
-                ";   
-               
-                foreach($getCategories as $index){
-             
-    echo"
-               
-                <option value = $index[CategoryId]>$index[Name]</option>
-                ";
-     }
-     echo"
-                </optgroup>
-                </select>
-    <br />
-    
-    Amount:<input type = 'text' placeholder=  name='Amount' />
-    <input type = 'submit' name='$new'/>
-    </form>
-    ";
-     $update = dbQuery(
-        "
-        Update Expenses
-        SET Amount= $newAmount, Category=
-        WHERE ExpenseId = $ExpenseId
-        "
-    )->fetchAll();
-  
-   
-}
 
 echo"
 <div class = 'container'>

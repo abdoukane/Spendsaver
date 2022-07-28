@@ -1,5 +1,7 @@
 <?php
 include_once('include/initialize.php'); 
+checkUser();
+var_dump($_SESSION['UserId']);
 getHeader();
 
 $meterData = getExpenses();

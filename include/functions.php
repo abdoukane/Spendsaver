@@ -93,4 +93,15 @@ function getExpense(){
         return $total;
     }
 
+        function getUsers(){
 
+            $users = dbQuery(
+                " 
+                SELECT *
+                FROM User
+                "
+            )->fetchAll();
+            
+            return $users;
+
+}
