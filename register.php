@@ -16,8 +16,8 @@ echo"
 $errors = [];
 if(isset($_REQUEST['User'])){
    header("Location:login.php");
-    if(!isset($_REQUEST['Username']) || $_REQUEST['Username'] ==''){
-        $errors['Username']='Required';
+    if(!isset($_REQUEST['Email']) || $_REQUEST['Email'] ==''){
+        $errors['Email']='Required';
         var_dump($errors);
         die("the form was not submitted");
     } 
@@ -29,8 +29,8 @@ if(isset($_REQUEST['User'])){
 
     if(sizeof($errors)==0){
 dbQuery("
-        INSERT INTO User(Username, Password)
-        VALUES('$_REQUEST[Username]', '$_REQUEST[Password]')
+        INSERT INTO User(Email, Password)
+        VALUES('$_REQUEST[Email]', '$_REQUEST[Password]')
 ");
 
 
@@ -44,7 +44,7 @@ sleep(3);
 echo"
 <form method = 'post' action=''>
 
- <input type = 'text' placeholder='Username'name='Username' />
+ <input type = 'text' placeholder='Email'name='Email' />
 <br />
 
 <input type = 'password' placeholder='Password' name='Password' />

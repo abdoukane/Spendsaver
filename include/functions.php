@@ -105,3 +105,16 @@ function getExpense(){
             return $users;
 
 }
+// function userInfo(){
+
+//     $User = dbQuery(
+//         "
+//         SELECT Category.Name, Category.Budget, Expenses.Amount, Expenses.DateCreated, Expenses.ExpenseId as ExpenseId
+//         FROM Category, Expenses
+//         Where Category.CategoryId = Expenses.CategoryId AND Category.UserId = User.UserId
+//         GROUP BY Category.UserId, Category.Name, Category.Budget, Expenses.Amount, Expenses.DateCreated, Expenses.ExpenseId
+//         "
+//     )
+
+// }
+
