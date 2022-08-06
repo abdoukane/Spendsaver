@@ -2,7 +2,7 @@
 include_once('include/initialize.php'); 
 
 getHeader();
-getFooter();
+//getFooter();
 echo"
 <link rel='stylesheet' href='main.css'>
 ";
@@ -26,11 +26,16 @@ if(isset($_REQUEST['User'])){
         var_dump($errors);
         die("the form wasnt submitted");
     }
+    if(!isset($_REQUEST['Name']) || $_REQUEST['Name'] ==''){
+        $errors['Name']='Required';
+        var_dump($errors);
+        die("the form wasnt submitted");
+    }
 
     if(sizeof($errors)==0){
 dbQuery("
-        INSERT INTO User(Email, Password)
-        VALUES('$_REQUEST[Email]', '$_REQUEST[Password]')
+        INSERT INTO User(Name, Email, Password)
+        VALUES('$_REQUEST[Name]','$_REQUEST[Email]', '$_REQUEST[Password]')
 ");
 
 
@@ -44,6 +49,8 @@ sleep(3);
 echo"
 <form method = 'post' action=''>
 
+<input type = 'text' placeholder='First Name'name='Name' />
+<br />
  <input type = 'text' placeholder='Email'name='Email' />
 <br />
 

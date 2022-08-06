@@ -1,12 +1,12 @@
 <?php
 include_once('include/initialize.php'); 
 checkUser();
-var_dump($_SESSION['UserId']);
+
 getHeader();
 
 $meterData = getExpenses();
 
-$sum = ExpenseTotal();
+$sum = expenseTotal();
 echo"
 <div class = 'container'>
 <div class='shell'>
@@ -16,13 +16,13 @@ echo"
 <link rel='stylesheet' href='meters.css'>
 ";
     foreach($sum as $total){
-        
+       // var_dump($total);
         $name = $total['Name'];
-    $percentfilled = ($total['Total']/$total['Budget'])*100;
+    $percentfilled = round((($total['Total']/$total['Budget'])*100),2);
 
     echo"
         <h1 style= 'color: #FF652F;'>$name</h1>
-        <div class='meteroutline'>
+        <div class='meteroutline' style= width: 100%;>
         <div class='percentfilled' style= 'width: $percentfilled%;'>$percentfilled%</div>
         </div>
         ";

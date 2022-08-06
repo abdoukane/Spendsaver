@@ -3,8 +3,17 @@
 include_once('include/initialize.php'); 
 checkUser();
 $getExpenses= getExpenses();
+$user = getUser();
 //var_dump($getExpenses);
 getHeader();
+
+// //foreach($user as $users){
+//  $name = $user['Name'];
+// echo"
+// <h2>Welcome Back,</h2>
+// <h2>$name</h2>
+// ";
+// //}
 
 echo"
 <div class= 'container'>
@@ -32,6 +41,7 @@ echo"
     }
     
     echo"
+    <h2>New Category?</h2>
     <form method = 'post' action=''>
     
    <input type = 'text' placeholder='Name' name='Name' />
@@ -71,9 +81,9 @@ echo"
     die("the form was submitted");
         }
     }
-     $getCategories= getCategories();
-               
+     $getCategories= userCategory();
     echo"
+    <h2>New expense?</h2>
     <form method = 'post' action=''>
     
     <select name= 'CategoryId' id= 'categories'>

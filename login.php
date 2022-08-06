@@ -14,7 +14,7 @@ if(isset($_REQUEST['Submitted'])){
     }
 }
 getHeader();
-getFooter();
+//getFooter();
 echo"
 <link rel='stylesheet' href='main.css'>
 ";

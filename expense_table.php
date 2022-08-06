@@ -2,7 +2,7 @@
 
 include_once('include/initialize.php'); 
 checkUser();
-var_dump($_SESSION['UserId']);
+
 getHeader();
 getFooter();
 $getExpenses= tableQuery();
@@ -29,20 +29,20 @@ echo"
     <td>Category</td>
     <td>Amount</td>
     <td>Date</td>
-    <td>Delete/Edit</td>
+    <td>Delete</td>
 </tr>
 ";
 
+
 foreach($getExpenses as $index){
-  
+    $dates = $index['DateCreated'];
+  $date = date("m-d-Y", strtotime($dates));
      echo" 
 <tr>
     <td>$index[Name]</td>
     <td>$index[Amount]</td>
-    <td>$index[DateCreated] </td>
+    <td>$date</td>
     <td> 
-        <a href='edit.php?ExpenseId=$index[ExpenseId]'>edit</a>
-        /
         <a href='?ExpenseId=$index[ExpenseId]'>delete</a>
     </td>
 </tr>

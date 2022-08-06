@@ -2,9 +2,10 @@
 
 function getHeader(){
     echo "
-    <html>
+    <html> 
+    <title> Spendsaver </title> 
     <head>
-        <title> Spendsaver </title> 
+       
          <link rel='stylesheet' href='main.css'>
         <body>
 

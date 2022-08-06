@@ -65,13 +65,13 @@ function getExpense(){
 
 
     Function expenseTotal(){
-
+        $id = $_SESSION['UserId'];
         $total = dbQuery(
             " 
         SELECT Category.Name, Category.Budget,
         SUM(Expenses.Amount) as Total
         FROM Category,Expenses
-        WHERE Category.CategoryId = Expenses.CategoryId
+        WHERE Category.CategoryId = Expenses.CategoryId AND Category.UserId = $id
         GROUP BY Category.Name, Category.Budget
 "
         )->fetchAll();
@@ -79,13 +79,13 @@ function getExpense(){
         return $total;
     }
     Function tableQuery(){
-
+        $id = $_SESSION['UserId'];
         $total = dbQuery(
             " 
             SELECT Category.Name, Category.Budget,
             Expenses.Amount as Amount, Expenses.DateCreated as DateCreated, Expenses.ExpenseId as ExpenseId
             FROM Category,Expenses
-            WHERE Category.CategoryId = Expenses.CategoryId
+            WHERE Category.CategoryId = Expenses.CategoryId AND Category.UserId = $id
             GROUP BY Category.Name, Category.Budget, Expenses.Amount, Expenses.DateCreated, Expenses.ExpenseId
 "
         )->fetchAll();
@@ -104,6 +104,46 @@ function getExpense(){
             
             return $users;
 
+}
+function getUser(){
+    $id = $_SESSION['UserId'];
+    $users = dbQuery(
+        " 
+        SELECT *
+        FROM User, Category
+        Where Category.UserId = $id
+        "
+    )->fetchAll();
+    
+    return $users;
+
+}
+
+
+
+function userTotal(){
+    $id = $_SESSION['UserId'];
+    $total = dbQuery(
+        "
+        SELECT Category.Name, Category.Budget, 
+        SUM(Expenses.Amount) as Total
+        FROM Category, Expenses, User
+         Where Category.CategoryId = Expenses.CategoryId AND Category.UserId = $id
+        GROUP BY Category.UserId, Category.Name, Category.Budget
+
+    ")->fetchAll();
+}
+
+function userCategory(){
+    $id = $_SESSION['UserId'];
+    $category = dbQuery(
+        "
+        SELECT *
+        FROM Category
+         Where Category.UserId = $id
+        ")->fetchAll();
+        
+    return $category;
 }
 // function userInfo(){
 
